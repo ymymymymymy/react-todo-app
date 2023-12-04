@@ -28,7 +28,7 @@ export const TodoList = ({ taskList, setTaskList }) => {
               className={`todo ${task.checked ? "checked" : ""}`}
               key={index}
             >
-              <div className="todoText bg-white px-20">
+              <div className="todoText bg-white w-80 text-center mb-1">
                 <span className="bg-white">{task.text}</span>
               </div>
               <div className="button">
