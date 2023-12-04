@@ -31,7 +31,7 @@ export const InputForm = ({ taskList, setTaskList }, { count, setCount }) => {
   return (
     <div className="inputForm">
       <p className="flex justify-center mb-2 text-lg font-bold">
-        タスクを入力してください。
+        タスクを入力してください。(20文字以内)
       </p>
       <form onSubmit={handleSubmit} className="flex justify-center mb-3">
         <input
@@ -39,6 +39,7 @@ export const InputForm = ({ taskList, setTaskList }, { count, setCount }) => {
           onChange={handleChange}
           value={inputText}
           className="bg-white"
+          maxlength="20"
         />
         <button className="mx-1">
           <i className="fa-solid fa-square-plus fa-lg"></i>
