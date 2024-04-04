@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const InputForm = ({ taskList, setTaskList }, { count, setCount }) => {
+export const InputForm = ({ taskList, setTaskList }) => {
   const [inputText, setInputText] = useState("");
 
   const handleSubmit = (e) => {
@@ -13,7 +13,6 @@ export const InputForm = ({ taskList, setTaskList }, { count, setCount }) => {
           id: taskList.length,
           text: inputText,
           checked: false,
-          count: 0,
         },
         //展開後、配列内に新しくオブジェクトを追加
       ]);
@@ -47,6 +46,7 @@ export const InputForm = ({ taskList, setTaskList }, { count, setCount }) => {
       </form>
       <span className="flex justify-center mb-10">
         現在残っているタスク数：
+        {taskList.filter((task) => task.completed === false).length}
       </span>
     </div>
   );

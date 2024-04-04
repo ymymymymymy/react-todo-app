@@ -19,6 +19,8 @@ export const TodoList = ({ taskList, setTaskList }) => {
     setTaskList(taskList.filter((task) => task.id !== id));
   };
 
+  const handleCount = (id) => {};
+
   return (
     <>
       <div className="todoList flex justify-center">
@@ -32,10 +34,22 @@ export const TodoList = ({ taskList, setTaskList }) => {
                 <span className="bg-white">{task.text}</span>
               </div>
               <div className="button">
-                <button onClick={() => handleChecked(task.id)} className="mx-1">
+                <button
+                  onClick={() => {
+                    handleChecked(task.id);
+                    handleCount(task.id);
+                  }}
+                  className="mx-1"
+                >
                   <i className="fa-solid fa-check fa-lg"></i>
                 </button>
-                <button onClick={() => handleDelete(task.id)} className="mx-1">
+                <button
+                  onClick={() => {
+                    handleDelete(task.id);
+                    handleCount(task.id);
+                  }}
+                  className="mx-1"
+                >
                   <i className="fa-solid fa-trash fa-lg"></i>
                 </button>
               </div>
