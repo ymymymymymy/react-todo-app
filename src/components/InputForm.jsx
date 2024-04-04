@@ -45,7 +45,7 @@ export const InputForm = ({ taskList, setTaskList }) => {
         </button>
       </form>
       <span className="flex justify-center mb-10">
-        現在残っているタスク数：
+        現在残っているタスク数：0
         {taskList.filter((task) => task.completed === false).length}
       </span>
     </div>
